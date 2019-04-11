@@ -1,8 +1,16 @@
 const { succeed, fail, repair, get } = require('./enhancer.js')
 
 describe('enhancer modules', () => {
-  const result = repair({ name: 'long sword', durability: 0, enchantment: 0 })
   it('repair tester', () => {
+    const result = repair({ name: 'long sword', durability: 0, enchantment: 0 })
     expect(result.durability).toBe(100)
+  })
+  it('succeed, enchantment tester', () => {
+    const succeedResult = succeed({
+      name: 'long sword',
+      durability: 100,
+      enchantment: 0
+    })
+    expect(succeedResult.enchantment).toBe(1)
   })
 })
