@@ -1,8 +1,8 @@
 const { succeed, fail, repair, get } = require('./enhancer.js')
 
-describe('Asynchronous tests', () => {
-  const result = succeed('h')
-  it('async using callback', () => {
-    expect(result).toBe('hi')
+describe('enhancer modules', () => {
+  const result = repair({ name: 'long sword', durability: 0, enchantment: 0 })
+  it('repair tester', () => {
+    expect(result.durability).toBe(100)
   })
 })

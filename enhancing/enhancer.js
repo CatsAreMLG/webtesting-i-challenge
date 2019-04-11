@@ -5,8 +5,9 @@ module.exports = {
   get
 }
 
-function succeed(item) {
-  return item
+function succeed(item, enchantment) {
+  item.enchantment = enchantment || 0
+  return { ...item }
 }
 
 function fail(item) {
@@ -14,6 +15,7 @@ function fail(item) {
 }
 
 function repair(item) {
+  item.durability = 100
   return { ...item }
 }
 
