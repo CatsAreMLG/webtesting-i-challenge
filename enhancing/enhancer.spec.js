@@ -13,4 +13,12 @@ describe('enhancer modules', () => {
     })
     expect(succeedResult.enchantment).toBe(1)
   })
+  it('fail, enchantment tester', () => {
+    const failResult = fail({
+      name: 'long sword',
+      durability: 100,
+      enchantment: 17
+    })
+    expect(failResult.enchantment).toBe(16)
+  })
 })
